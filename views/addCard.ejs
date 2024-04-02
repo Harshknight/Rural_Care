@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <title>Add New Blog</title>
+</head>
+
+<body style="background-color: #017bb0">
+    <%- include('./partials/nav.ejs') %>
+        <%= JSON.stringify(user) %>
+
+            <div class="row justify-content-center mt-4">
+
+                <div class="card" style="width: 40rem; opacity: 0.7; box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);">
+                    <div class="card-body">
+                        <div class="container mt-4 align-self-center">
+                            <form action="/doctor" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="coverImage" class="form-label">Cover Image</label>
+                                    <input type="file" class="form-control" name="coverImage" id="coverImage"
+                                        aria-describedby="coverImage">
+
+                                </div>
+                                <div class="mb-3">
+                                    <label for="doctorName" class="form-label">doctorName</label>
+                                    <input type="text" class="form-control" name="doctorName" id="doctorName"
+                                        aria-describedby="doctorName">
+
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="speciality" class="form-label">speciality</label>
+                                    <input class="form-control" name="speciality" id="speciality">
+                                </div>
+
+                                <div class="mb-3">
+                                    <button class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

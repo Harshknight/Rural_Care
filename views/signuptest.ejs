@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../views.css/signup.style.css">
+	<title>Signup</title>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="card">
+			<img src="background.jpg" alt="background" class="background-image">
+			<div class="card-content">
+				<h2 class="title">Sign Up</h2>
+				<form action="/user/signup" method="post">
+					<div class="form-field">
+						<label for="fullName" class="form-label">Full Name</label>
+                		<input type="text" class="form-control" name="fullName" id="fullName" aria-describedby="emailHelp" required>
+					</div>
+					<div class="form-field">
+						<label for="email" class="form-label">Email address</label>
+              			<input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
+					</div>
+					<div class="form-field">
+						<label for="password" class="form-label">Password</label>
+              			<input type="password" class="form-control" name="password" id="password" required>
+					</div>
+					<div class="form-field">
+						<!-- <label for="cpassword" class="form-label">Confirm Password</label>
+              			<input type="cpassword" class="form-control" name="cpassword" id="cpassword" required> -->
+					</div>
+					<div class="form-actions">
+						<button type="submit">Sign Up</button>
+						<p class="extra-actions">
+							<input type="checkbox" id="remember-me" name="remember-me">
+							<label for="remember-me">Remember Me</label>
+							<a href="#">Forgot Password?</a>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="../views.js/signup.script.js"></script>
+</body>
+</html>

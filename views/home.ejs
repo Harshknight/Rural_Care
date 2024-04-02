@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <title>Home Page</title>
+</head>
+
+<body style="background: rgb(0, 68, 9);">
+    <%- include('./partials/nav.ejs') %>
+
+        <div class="container mt-3 ">
+            <p>HOMEPAGE</p>
+
+            <div class="card" style="border-color:rgb(255, 236, 206); border-width: 2px; margin:2px;border-radius: 5px;">
+                <h5 class="card-header" style="background: rgb(58, 130, 40); color: antiquewhite; border-radius: 0;">Instant AI Prescription</h5>
+                <div class="card-body" style="display: flex; background: rgb(42, 98, 28); color: antiquewhite;">
+                    <div style="padding: 5px 10px 5px 5px ;">
+                        <img src="../public/images/aiDoc.png" alt="..." width="210px">
+                    </div>
+                    <div style="padding: 0 0 0 10px;">
+                        <h5 class="card-title mt-3" >Get 24X7 health advice easily with AI<br>Your health matters</h5>
+                        <p class="card-text mt-3">Here we provide a platform where you can ask about any health related
+                            query related to a specific disease anytime directly through your device.<br>Common
+                            healthcare advice must be accessible free to everyone. Feel free to ask. </p>
+                        <button class="btn btn-info" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Start asking</button>
+                    </div>
+
+                    <div class="offcanvas offcanvas-bottom" style="height: 85vh; background: rgb(39, 39, 39);"
+                        tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+                            <button type="button" class="btn-close" style="background-color:rgb(255, 255, 255)" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body small">
+
+                            <div class="list-group">
+                                <a href="#" class="list-group-item list-group-item-action active"
+                                    style="background: rgb(39, 39, 39); border-color:green; border-width: 2px; margin:2px;border-radius: 5px;"
+                                    aria-current="true">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1" style="color: white">Modal 1</h5>
+                                        <small>3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                    <small>And some small print.</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action active"
+                                    style="background: rgb(39, 39, 39); border-color:green; border-width: 2px; margin:2px;border-radius: 5px;">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1" style="color: white">Modal 2</h5>
+                                        <small class="text-body-secondary">3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                    <small>And some muted small print.</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action active"
+                                    style="background: rgb(39, 39, 39); border-color:green; border-width: 2px; margin:2px;border-radius: 5px;">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1" style="color: white">Modal 3</h5>
+                                        <small class="text-body-secondary">3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                    <small>And some muted small print.</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action active"
+                                    style="background: rgb(39, 39, 39); border-color:green; border-width: 2px; margin:2px;border-radius: 5px;">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1" style="color: white">Modal 4</h5>
+                                        <small class="text-body-secondary">3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                    <small class="text-body-secondary">And some muted small print.</small>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action active"
+                                    style="background: rgb(39, 39, 39); border-color:green; border-width: 2px; margin:2px;border-radius: 5px;">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h5 class="mb-1" style="color: white">Modal 5</h5>
+                                        <small class="text-body-secondary">3 days ago</small>
+                                    </div>
+                                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                    <small class="text-body-secondary">And some muted small print.</small>
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="card mt-4" style="border-color:rgb(255, 236, 206); border-width: 2px; margin:2px;border-radius: 5px;">
+                    <h5 class="card-header" style="background: rgb(58, 130, 40); color: antiquewhite; border-radius: 0;">Consult a doctor</h5>
+                    <div class="card-body" style="display: flex; background: rgb(42, 98, 28); color: antiquewhite;">
+                        <div style="padding: 5px 10px 5px 5px ;">
+                            <img src="../public/images/doc.png" alt="..." width="210px">
+                        </div>
+                        <div style="padding: 0 0 0 10px;">
+                            <h5 class="card-title mt-3">Get 24X7 health advice easily with AI<br>Your health matters
+                            </h5>
+                            <p class="card-text mt-3">Ask about any health problem or guidance directly from the doctor.
+                            </p>
+                            <div class="flex-row">
+                            <a href="/doctorList" class="btn btn-info mt-3">Get Appointment</a>
+                            <a href="/videoCall" class="btn btn-info mt-3">Connect on call</a>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card mt-4" style="border-color:rgb(255, 236, 206); border-width: 2px; margin:2px;border-radius: 5px;">
+                    <h5 class="card-header" style="background: rgb(58, 130, 40); color: antiquewhite; border-radius: 0;">Report via whatsapp</h5>
+                    <div class="card-body" style="display: flex; background: rgb(42, 98, 28); color: antiquewhite;">
+                        <div style="padding: 5px 10px 5px 5px ;">
+                            <img src="../public/images/aiDoc.png" alt="..." width="210px">
+                        </div>
+                        <div style="padding: 0 0 0 10px;">
+                            <h5 class="card-title mt-3">Get 24X7 health advice easily with AI<br>Your health matters
+                            </h5>
+                            <p class="card-text mt-3">Here we provide a platform where you can ask about any health
+                                related
+                                query related to a specific disease anytime directly through your device.<br>Common
+                                healthcare
+                                advice must be accessible free to everyone. Feel free to ask. </p>
+                            <a href="#" class="btn btn-info mt-3">Start asking</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

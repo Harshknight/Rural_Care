@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head.ejs') %>
+    <title>Doctor List</title>
+</head>
+
+<body style="background: rgb(0, 68, 9);">
+  <%- include('./partials/nav.ejs') %>
+    <div style="display:flex;">
+    
+        <nav class="nav flex-column px-3 py-3 " style="background-color:rgb(69, 69, 69); width:200px; height: 100vh; box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);">
+          <a class="nav-link active" style="color: antiquewhite;" aria-current="page" href="/">Home</a>
+          <a class="nav-link" style="color: antiquewhite;" href="#">Link1</a>
+          <a class="nav-link" style="color: antiquewhite;" href="#">Link2</a>
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </nav>
+ 
+      <div>
+        <div class="container mt-3">
+          <div class="row row-cols-4">
+            <% doctors.forEach(doctor=> { %>
+              <div class="col">
+                <div class="card" style="width: 18rem; border-color: brown;">
+                  <img src="<%= doctor.coverImageURL %>" class="card-img-top" alt="...">
+                  <div class="card-body" style="background-color: rgb(204, 255, 200);">
+                    <h5 class="card-title">
+                      <%= doctor.doctorName %>
+                    </h5>
+                    <h6 class="card-title">
+                      <%= doctor.speciality %>
+                    </h6>
+
+                    <a href="/doctor/requestAppointment/<%= doctor._id %>" class="btn btn-danger">Ask for Appointment</a>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <%- include('./partials/script.ejs') %>
+</body>
+
+</html>
