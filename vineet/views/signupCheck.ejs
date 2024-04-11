@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Blog</title>
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+		<div style="display: flex;">
+            <div class="card" style="width: 18rem; border-color: brown;">
+                <img src="#" class="card-img-top" alt="...">
+                <div class="card-body" style="background-color: rgb(204, 255, 200);">
+                </div>
+              </div>
+              <form action="/doctor/requestAppointment/?doctorId=<%= doctor._id %>&userId1=<%= user._id %>" method="post">
+                <button type="submit" class="btn btn-danger appointment-button">Login as User</button>
+                </button>
+              </form>
+           
+		</div>
+		
+		<div style="display: flex;">
+            <div class="card" style="width: 18rem; border-color: brown;">
+                <img src="#" class="card-img-top" alt="...">
+                <div class="card-body" style="background-color: rgb(204, 255, 200);">
+                </div>
+              </div>
+              <form action="/doctor/requestAppointment/?doctorId=<%= doctor._id %>&userId1=<%= user._id %>" method="post">
+                <button type="submit" class="btn btn-danger appointment-button">Login as Doctor</button>
+                </button>
+              </form>
+           
+		</div>
+          
+
+
+
+
+              
+             
+    </div>
+    <%- include('./partials/script.ejs') %>
+</body>
+</html>

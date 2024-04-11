@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head.ejs') %>
+    <title>Signup</title>
+</head>
+
+<body style="background-color: #59b001">
+
+  <%- include('./partials/nav.ejs') %>
+    <div class="row justify-content-center mt-4">
+
+      <div class="card" style="width: 40rem; opacity: 0.7; box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);">
+        <div class="card-body">
+          <div class="container mt-4 align-self-center">
+            <form action="/doctor/initiateRequest" method="post">
+              <div class="mb-3">
+                <label for="doctorName" class="form-label">Doctor Name</label>
+                <input type="text" class="form-control" name="doctorName" id="doctorName" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="patientName" class="form-label">Patient Name</label>
+                <input type="patientName" class="form-control" name="patientName" id="patientName" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="location" class="form-control" name="location" id="location">
+              </div>
+              <div class="mb-3">
+                <label for="bloodType" class="form-label">Blood Group</label>
+                <input type="bloodType" class="form-control" name="bloodType" id="bloodType">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

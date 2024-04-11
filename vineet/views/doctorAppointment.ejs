@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Blog</title>
+</head>
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+
+
+
+
+        <% if (locals.user) { %>
+            <div class="card" style="width: 18rem; border-color: brown;">
+                <img src="<%= doctor.coverImageURL %>" class="card-img-top" alt="...">
+                <div class="card-body" style="background-color: rgb(204, 255, 200);">
+                  <h5 class="card-title">
+                    <%= doctor.doctorName %>
+                  </h5>
+                  <h6 class="card-title">
+                    <%= doctor.speciality %>
+                  </h6>
+
+                </div>
+              </div>
+              <form action="/doctor/requestAppointment/?doctorId=<%= doctor._id %>&userId1=<%= user._id %>&patientName=<%=  %>" method="post">
+                <button type="submit" class="btn btn-danger appointment-button"
+                  <% if (!locals.doctorAppointment?.requestStatus) { %>
+                    data-content="Ask for Appointment"
+                    style="background-color: red;"
+                  <% } else { %>
+                    data-content="Request Pending"
+                    style="background-color: green;"
+                  <% } %>
+                >
+                  <% if (!locals.doctorAppointment?.requestStatus) { %>
+                    Ask for Appointment
+                  <% } else { %>
+                    Request Pending
+                  <% } %>
+                </button>
+              </form>
+           
+
+              <% } %>
+
+
+
+
+              
+             
+    </div>
+    <%- include('./partials/script.ejs') %>
+</body>
+</html>

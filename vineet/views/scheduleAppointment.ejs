@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+        <title>Home Page</title>
+</head>
+
+<body style="background: rgb(0, 68, 9);">
+    <%- include('./partials/nav.ejs') %>
+
+        <div>
+            <div class="container mt-3">
+                <div class="row row-cols-4">
+                    <% patients.forEach(patient=> { %>
+                        <div class="col">
+                            <div class="card" style="width: 18rem; border-color: brown;">
+                                <div class="card-body" style="background-color: rgb(204, 255, 200);">
+                                    <h5 class="card-title">
+                                        <%= patient.patientName %>
+                                    </h5>
+                                
+
+
+                                <div class="container" >
+                                    <form
+                                        action="/doctor/approveAppointment?status=<%= true %>&doctorId=<%=patient.doctorId %>&patientId=<%= patient.patientId %>"
+                                        method="post">
+                                        <h6>
+                                            <label for="datetime" class="form-label">Date and Time(YYYY-MM-DD
+                                                HH:mm):</label>
+                                            <input type="text" name="datetime" id="datetime" class="form-control" />
+
+                                        </h6>
+                                        <button id="approve" class="btn btn-success">Approve</button>
+                                        </form>
+                                        <form
+                                            action="/doctor/approveAppointment?status=<%= false %>&doctorId=<%=patient.doctorId %>&patientId=<%= patient.patientId %>"
+                                            method="post">
+                                            <button id="reject" class="btn btn-danger">Reject</button>
+
+                                        </form>
+
+                                </div>
+                            </div>
+
+                            </div>
+                        </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+
+        <%- include('./partials/script.ejs') %>
+</body>
+
+</html>

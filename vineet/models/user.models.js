@@ -6,11 +6,11 @@ const userSchema = new Schema({
     fullName: {
         type: String,
         required: true,
-    },
+    }, 
     email: {
-        type: String,
+        type: String, 
         required: true,
-        unique: true,
+        unique: true, 
     },
     salt: {
         type: String,
@@ -25,7 +25,7 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
-        enum: ['ADMIN', 'USER'],
+        enum: ['DOCTOR', 'USER'],
         default: "USER",
     }
     
@@ -50,9 +50,10 @@ userSchema.static("matchPasswordAndGenerateToken", async function(email, passwor
     const user = await this.findOne({ email });
     if (!user) throw new Error("User not Found!")
     
-    const salt = user.salt;
+    const salt = user.salt; 
     const name = user.fullName;
     const hashedPassword = user.password;
+    const role = user.role;
 
     const userProvidedHash = createHmac('sha256', salt)
     .update(password)
@@ -62,7 +63,7 @@ userSchema.static("matchPasswordAndGenerateToken", async function(email, passwor
         throw new Error("Incorrect password");
 
     const token = createTokenForUser(user);
-    return {token, name}; 
+    return {token, name, role}; 
 })
 
 export const User = model('User', userSchema);

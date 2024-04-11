@@ -9,7 +9,7 @@ import { checkForAuthenticationCookie } from './middleware/auth.middleware.js';
 import userRoute from './routes/user.route.js';
 import doctorRoute from './routes/doctor.route.js';
 
-import Doctor from './models/doctor.models.js';
+import {Doctor} from './models/doctor.models.js';
 
 dotenv.config({
     path: './.env'
@@ -29,17 +29,18 @@ app.set("views", path.resolve("./views"));
 app.use(express.urlencoded({ extended: false}));
 app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token")) 
-app.use('/public/', express.static(path.resolve('./public')))
+app.use('/public/', express.static(path.resolve('./public'))) 
 app.use(express.static(path.resolve('./public')))
 
-app.get("/",async (req, res) => {
-    
-    res.render("home");
+app.get("/",async (req, res) => { 
+    res.render("home",{
+        user: req.user,
+    });
 });
 
 app.get("/doctorList",async (req, res) => {
     const allDoctors = await Doctor.find({});
-    res.render("doctor", {
+    res.render("doctor", { 
         user: req.user,
         doctors: allDoctors,
     });

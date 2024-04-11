@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+    <title>Signin</title>
+</head>
+<body style="background-color: #d1b500">
+    <%- include('./partials/nav.ejs') %>
+
+    <% if (locals.doctor.doctorName) { %>
+    
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%= doctor.doctorName %></h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary"><%= doctor.speciality %></h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Rate</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+        <a href="/searchDoner" class="btn btn-info mt-3">Get Appointment</a>
+
+
+    <% } else { %>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Doctor details not found</h5>
+              
+              <a href="#" class="card-link">Signup as doctor</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+    <% } %>
+
+
+    <%- include('./partials/script.ejs') %>
+</body>
+</html>

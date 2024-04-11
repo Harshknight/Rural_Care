@@ -10,7 +10,7 @@
     <%- include('./partials/nav.ejs') %>
 
         <div class="container mt-3 ">
-            <p>HOMEPAGE</p>
+            
 
             <div class="card" style="border-color:rgb(255, 236, 206); border-width: 2px; margin:2px;border-radius: 5px;">
                 <h5 class="card-header" style="background: rgb(58, 130, 40); color: antiquewhite; border-radius: 0;">Instant AI Prescription</h5>
@@ -91,25 +91,54 @@
 
                     </div>
                 </div>
-                <div class="card mt-4" style="border-color:rgb(255, 236, 206); border-width: 2px; margin:2px;border-radius: 5px;">
-                    <h5 class="card-header" style="background: rgb(58, 130, 40); color: antiquewhite; border-radius: 0;">Consult a doctor</h5>
-                    <div class="card-body" style="display: flex; background: rgb(42, 98, 28); color: antiquewhite;">
-                        <div style="padding: 5px 10px 5px 5px ;">
-                            <img src="../public/images/doc.png" alt="..." width="210px">
+                <% if (locals.role === 'USER') { %>
+                    <div class="card mt-4" style="border-color:rgb(255, 236, 206); border-width: 2px; margin:2px;border-radius: 5px;">
+                        <h5 class="card-header" style="background: rgb(58, 130, 40); color: antiquewhite; border-radius: 0;">Consult a doctor</h5>
+                        <div class="card-body" style="display: flex; background: rgb(42, 98, 28); color: antiquewhite;">
+                            <div style="padding: 5px 10px 5px 5px ;">
+                                <img src="../public/images/doc.png" alt="..." width="210px">
+                            </div>
+                            <div style="padding: 0 0 0 10px;">
+                                <h5 class="card-title mt-3">Get 24X7 health advice easily with AI<br>Your health matters
+                                </h5>
+                                <p class="card-text mt-3">Ask about any health problem or guidance directly from the doctor.
+                                </p>
+                                <div class="flex-row">
+                                <a href="/doctorList" class="btn btn-info mt-3">Get Appointment</a>
+                                <a href="/videoCall" class="btn btn-info mt-3">Connect on call</a>
+                            </div>
+                            </div>
+    
                         </div>
-                        <div style="padding: 0 0 0 10px;">
-                            <h5 class="card-title mt-3">Get 24X7 health advice easily with AI<br>Your health matters
-                            </h5>
-                            <p class="card-text mt-3">Ask about any health problem or guidance directly from the doctor.
-                            </p>
-                            <div class="flex-row">
-                            <a href="/doctorList" class="btn btn-info mt-3">Get Appointment</a>
-                            <a href="/videoCall" class="btn btn-info mt-3">Connect on call</a>
-                        </div>
-                        </div>
-
                     </div>
-                </div>
+               
+                    <% } else if (locals.role === 'DOCTOR') { %> 
+                    <div class="card mt-4" style="border-color:rgb(255, 236, 206); border-width: 2px; margin:2px;border-radius: 5px;">
+                        <h5 class="card-header" style="background: rgb(58, 130, 40); color: antiquewhite; border-radius: 0;">Consult a doctor</h5>
+                        <div class="card-body" style="display: flex; background: rgb(42, 98, 28); color: antiquewhite;">
+                            <div style="padding: 5px 10px 5px 5px ;">
+                                <img src="../public/images/doc.png" alt="..." width="210px">
+                            </div>
+                            <div style="padding: 0 0 0 10px;">
+                                <h5 class="card-title mt-3">Let's connect doctor and patient<br>Your health matters
+                                </h5>
+                                <p class="card-text mt-3">Directly connect with patients from remote areas<br>We appreciate your efforts.
+                                </p>
+                                <div class="flex-row">
+                                <a href="/doctor/schedule/<%= did %>" class="btn btn-info mt-3">Scheduel Appointment</a>
+                                <a href="/doctor/videoCall" class="btn btn-info mt-3">Connect on call</a>
+                            </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                <% } else { %>
+                 
+                <% } %>
+                    
+
+                
+                
                 <div class="card mt-4" style="border-color:rgb(255, 236, 206); border-width: 2px; margin:2px;border-radius: 5px;">
                     <h5 class="card-header" style="background: rgb(58, 130, 40); color: antiquewhite; border-radius: 0;">Report via whatsapp</h5>
                     <div class="card-body" style="display: flex; background: rgb(42, 98, 28); color: antiquewhite;">
