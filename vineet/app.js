@@ -38,13 +38,7 @@ app.get("/",async (req, res) => {
     });
 });
 
-app.get("/doctorList",async (req, res) => {
-    const allDoctors = await Doctor.find({});
-    res.render("doctor", { 
-        user: req.user,
-        doctors: allDoctors,
-    });
-});
+
 
 app.use("/user", userRoute);
 app.use("/doctor", doctorRoute);

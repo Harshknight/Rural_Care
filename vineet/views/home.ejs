@@ -104,8 +104,8 @@
                                 <p class="card-text mt-3">Ask about any health problem or guidance directly from the doctor.
                                 </p>
                                 <div class="flex-row">
-                                <a href="/doctorList" class="btn btn-info mt-3">Get Appointment</a>
-                                <a href="/videoCall" class="btn btn-info mt-3">Connect on call</a>
+                                <a href="/user/doctorList/<%= uid %>" class="btn btn-info mt-3">Get Appointment</a>
+                                <a href="/user/videoCall/<%= uid %>" class="btn btn-info mt-3">Connect on call</a>
                             </div>
                             </div>
     
@@ -125,8 +125,9 @@
                                 <p class="card-text mt-3">Directly connect with patients from remote areas<br>We appreciate your efforts.
                                 </p>
                                 <div class="flex-row">
-                                <a href="/doctor/schedule/<%= did %>" class="btn btn-info mt-3">Scheduel Appointment</a>
-                                <a href="/doctor/videoCall" class="btn btn-info mt-3">Connect on call</a>
+                                <a href="/doctor/schedule/?did=<%= locals.did %>&name=<%= locals.name %>&role=<%= locals.role %>" class="btn btn-info mt-3">Scheduel Appointment</a>
+                                <a href="/doctor/videoCall?did<%= did %>&name<%= name %>&role<%= role %>" class="btn btn-info mt-3">Connect on call</a>
+                                <a href="/doctor/requestBlood/<%= did %>" class="btn btn-info mt-3">Connect on call</a>
                             </div>
                             </div>
     

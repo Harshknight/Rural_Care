@@ -12,6 +12,17 @@ const userSchema = new Schema({
         required: true,
         unique: true, 
     },
+    bloodType: {
+        type: String, 
+         
+    },
+    contact: {
+        type: Number, 
+        required: true,
+    },
+    address: {
+        type: String, 
+    },
     salt: {
         type: String,
     },
@@ -63,7 +74,7 @@ userSchema.static("matchPasswordAndGenerateToken", async function(email, passwor
         throw new Error("Incorrect password");
 
     const token = createTokenForUser(user);
-    return {token, name, role}; 
+    return {token, name, role, uid: user._id}; 
 })
 
 export const User = model('User', userSchema);

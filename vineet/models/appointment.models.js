@@ -22,8 +22,8 @@ const appointmentSchema = new Schema({
     default: false,
   },  
   approveStatus: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: 'false',
   },  
 
 }, {timestamps: true}

@@ -24,18 +24,18 @@
 
                                 <div class="container" >
                                     <form
-                                        action="/doctor/approveAppointment?status=<%= true %>&doctorId=<%=patient.doctorId %>&patientId=<%= patient.patientId %>"
+                                        action="/doctor/approveAppointment?status=true&doctorId=<%=patient.doctorId %>&patientId=<%= patient.patientId %>"
                                         method="post">
                                         <h6>
                                             <label for="datetime" class="form-label">Date and Time(YYYY-MM-DD
                                                 HH:mm):</label>
-                                            <input type="text" name="datetime" id="datetime" class="form-control" />
+                                            <input type="text" name="datetime" id="datetime" class="form-control" required/>
 
                                         </h6>
                                         <button id="approve" class="btn btn-success">Approve</button>
                                         </form>
                                         <form
-                                            action="/doctor/approveAppointment?status=<%= false %>&doctorId=<%=patient.doctorId %>&patientId=<%= patient.patientId %>"
+                                            action="/doctor/approveAppointment?status=rejected&doctorId=<%=patient.doctorId %>&patientId=<%= patient.patientId %>"
                                             method="post">
                                             <button id="reject" class="btn btn-danger">Reject</button>
 

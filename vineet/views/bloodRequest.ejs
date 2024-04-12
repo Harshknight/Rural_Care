@@ -6,39 +6,38 @@
     <title>Signup</title>
 </head>
 
-<body style="background-color: #59b001">
+<body style="background-color: #ffffff">
 
   <%- include('./partials/nav.ejs') %>
-    <div class="row justify-content-center mt-4">
-
-      <div class="card" style="width: 40rem; opacity: 0.7; box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6);">
-        <div class="card-body">
-          <div class="container mt-4 align-self-center">
-            <form action="/doctor/initiateRequest" method="post">
-              <div class="mb-3">
-                <label for="doctorName" class="form-label">Doctor Name</label>
-                <input type="text" class="form-control" name="doctorName" id="doctorName" aria-describedby="emailHelp">
+        <div class="row justify-content-center mt-4">
+        <div style="background-color: rgb(221, 58, 58); width: 30rem; box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.6); border-radius: 1.5%; align-items: center;padding: 50px;margin: 20px;" class="card">
+            <img src="<%= locals.doctor?.profileImageURL %>" class="rounded-circle" width="200" alt="Circular Image">
+                
+                <div class="card-body mt-3">
+                  <h5 class="card-title"></h5>
+                  <p class="card-text"><strong><%= locals.doctor?.doctorName %></strong></p>
+                </div>
+                <form action="/doctor/initiateRequest/<%= doctor?._id %>" method="post">
+                 
+                  <div class="mb-3">
+                    <label for="patientName" class="form-label">Patient Name</label>
+                    <input type="patientName" class="form-control" name="patientName" id="patientName" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="location" class="form-control" name="location" id="location">
+                  </div>
+                  <div class="mb-3">
+                    <label for="bloodType" class="form-label">Blood Group</label>
+                    <input type="bloodType" class="form-control" name="bloodType" id="bloodType">
+                  </div><br><br>
+                <div text-align: center; class="Send Request Message">
+                  <button type="submit" class="btn btn-primary">Send Request Message</button>
+                </div>
+                </form>
               </div>
-              <div class="mb-3">
-                <label for="patientName" class="form-label">Patient Name</label>
-                <input type="patientName" class="form-control" name="patientName" id="patientName" aria-describedby="emailHelp">
-              </div>
-              <div class="mb-3">
-                <label for="location" class="form-label">Location</label>
-                <input type="location" class="form-control" name="location" id="location">
-              </div>
-              <div class="mb-3">
-                <label for="bloodType" class="form-label">Blood Group</label>
-                <input type="bloodType" class="form-control" name="bloodType" id="bloodType">
-              </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
+            </div>      
+              
     <%- include('./partials/script.ejs') %>
 </body>
 

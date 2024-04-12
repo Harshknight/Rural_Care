@@ -13,7 +13,7 @@
 
         <% if (locals.user) { %>
             <div class="card" style="width: 18rem; border-color: brown;">
-                <img src="<%= doctor.coverImageURL %>" class="card-img-top" alt="...">
+                <img src="<%= doctor.profileImageURL %>" class="card-img-top" alt="...">
                 <div class="card-body" style="background-color: rgb(204, 255, 200);">
                   <h5 class="card-title">
                     <%= doctor.doctorName %>
@@ -24,7 +24,7 @@
 
                 </div>
               </div>
-              <form action="/doctor/requestAppointment/?doctorId=<%= doctor._id %>&userId1=<%= user._id %>&patientName=<%=  %>" method="post">
+              <form action="/user/requestAppointment/?doctorId=<%= doctor._id %>&userId1=<%= user._id %>&patientName=<%=  %>" method="post">
                 <button type="submit" class="btn btn-danger appointment-button"
                   <% if (!locals.doctorAppointment?.requestStatus) { %>
                     data-content="Ask for Appointment"

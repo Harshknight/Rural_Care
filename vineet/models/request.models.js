@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 
 const requestSchema = new Schema({
-  doctorName: {
+  doctorId: {
     type: Schema.Types.ObjectId,
     ref: 'Doctor',
   },  

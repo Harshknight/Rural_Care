@@ -23,7 +23,7 @@
             <% doctors.forEach(doctor=> { %>
               <div class="col">
                 <div class="card" style="width: 18rem; border-color: brown;">
-                  <img src="<%= doctor.coverImageURL %>" class="card-img-top" alt="...">
+                  <img src="<%= doctor.profileImageURL %>" class="card-img-top" alt="...">
                   <div class="card-body" style="background-color: rgb(204, 255, 200);">
                     <h5 class="card-title">
                       <%= doctor.doctorName %>
@@ -32,7 +32,7 @@
                       <%= doctor.speciality %>
                     </h6>
 
-                    <a href="/doctor/requestAppointment/<%= doctor._id %>" class="btn btn-danger">Ask for Appointment</a>
+                    <a href="/user/requestAppointment/<%= doctor._id %>" class="btn btn-danger">Ask for Appointment</a>
                   </div>
                 </div>
               </div>
